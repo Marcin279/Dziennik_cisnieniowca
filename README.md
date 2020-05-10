@@ -1,0 +1,1 @@
+wyszukiwanie pomiarów po dacie i wartości
