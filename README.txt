@@ -1,1 +1,0 @@
-Zapis i wczytywanie pomiarow
