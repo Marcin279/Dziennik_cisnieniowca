@@ -8,10 +8,15 @@ Klasa posiada "AddNewPosition" posiada metodę "add", która zwraca powyższe pa
 
 Przykład działania:
 
+
 lista1 = AddNewPosition("12.02.2020", 145, 74, 76)
+
 lista2 = AddNewPosition("12.02.2026", 135, 76, 56)
+
 listaglowna = [lista1.add(), lista2.add()]
+
 print(listaglowna)
 
 Wynik działania:
+
 [['12.02.2020', 145, 74, 76], ['12.02.2026', 135, 76, 56]]
