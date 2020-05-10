@@ -1,1 +1,1 @@
-wyszukiwanie pomiarów po dacie i wartości
+Zapis pomiarow do pliku
