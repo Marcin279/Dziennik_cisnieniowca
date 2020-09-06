@@ -24,7 +24,7 @@ def interface():
     print(string)
 
 data_base=[]
-
+new_datas=[]
 
 print("\nWitaj w Dzienniku Ciśnieniowca, oto dostępne funkcjonalnośći:\n")
 load_data_base(data_base)
@@ -32,8 +32,10 @@ while True:
     interface()
     choice = input("Wybierz opcję z której chcesz skorzystać: ")
     if choice == '1':
-        print("Not implemented")
-
+        new=input_data()
+        data_base.append(add_data(new[0],new[1],new[2],new[3]))
+        new_datas.append(add_data(new[0],new[1],new[2],new[3]))
+        print("\n")
     elif choice == '2':
         print("Not implemented")
 
@@ -52,7 +54,7 @@ while True:
         year=input("Wybierz rok:")
         average_in_month(data_base,month,year)
     elif choice == '0':
-        save_data_base(data_base)
+        save_data_base(new_datas)
         print("Koniec")
         break
     else:
