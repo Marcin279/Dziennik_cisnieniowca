@@ -4,8 +4,8 @@
 
 def input_data():
     date_input = input("Podaj date:")
-    systolic_pressure_input = input("Podaj cisnienie skurczowe")
-    diastolic_pressure_input = input("Podaj cisnienie rozkurczowe")
+    systolic_pressure_input = input("Podaj cisnienie skurczowe:")
+    diastolic_pressure_input = input("Podaj cisnienie rozkurczowe:")
     blood_pressure_input = input("Podaj puls:")
     return [date_input, systolic_pressure_input, diastolic_pressure_input, blood_pressure_input]
 
