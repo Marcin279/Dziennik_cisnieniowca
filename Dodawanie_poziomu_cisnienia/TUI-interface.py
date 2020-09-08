@@ -20,7 +20,14 @@ def interface():
              f'0. Koniec'
     print("\n")
     print(string)
-
+    
+def interface_2():
+    string_2 = f'1. Szukaj wartosci pulsu \n' \
+               f'2. Szukaj wartosci cisnienia skurczowego \n' \
+               f'3. Szukaj wartosci cisnienia rozkurczowego \n' \
+               f'0. Koniec'
+    print("\n")
+    print(string_2)
 
 while True:
     interface()
@@ -29,7 +36,25 @@ while True:
         file_mode.write_data()
 
     elif choice == '2':
-        print(file_mode.search_by_value())
+        while True:
+            interface_2()
+            choice_2 = input("Wybierz opcję z której chcesz skorzystac: ")
+            if choice_2 == '1':          
+                print(file_mode.search_by_blood_pressure())
+    
+            elif choice_2 == '2':
+                print(file_mode.search_by_systolic_pressure())
+    
+            elif choice_2 == '3':
+                print(file_mode.search_by_diastolic_pressure())
+                
+            elif choice_2 == '0':
+                print("Koniec")
+                break
+
+            else:
+                print("Nie ma takiej mozliwosci, Sprobuj ponownie")
+                continue
 
     elif choice == '3':
         print(file_mode.search_by_date())
