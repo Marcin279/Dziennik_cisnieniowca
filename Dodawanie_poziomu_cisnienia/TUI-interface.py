@@ -11,6 +11,8 @@
 import file_mode
 from searching_mode import search_by_date, search_by_blood_pressure, search_by_diastolic_pressure
 from searching_mode import search_by_systolic_pressure
+from wykres_pomiarow import plot_diagram
+
 
 def interface():
     string = f'1. Dodaj nowa wartosc\n' \
@@ -59,7 +61,8 @@ while True:
         print(search_by_date())
 
     elif choice == '4':
-        print("Not implemented")
+        month = int(input("Podaj miesiac: "))
+        plot_diagram(month)
         interface()
 
     elif choice == "5":
