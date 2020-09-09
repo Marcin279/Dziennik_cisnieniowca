@@ -41,11 +41,8 @@ while True:
     elif choice == '2':
         while True:
             interface_2()
-            choice_2 = input("Wybierz opcję z której chcesz skorzystac:\n"
-                             "1: Puls\n"
-                             "2: Cisnienie skurczowe\n"
-                             "3: Cisnienie rozkurczowe\n "
-                             "0: Wroc do menu glownego")
+            choice_2 = input("Wybierz opcję z której chcesz skorzystac:  ")
+            
             if choice_2 == '1':
                 print(searching_mode.search_by_blood_pressure())
 
