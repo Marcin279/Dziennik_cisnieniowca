@@ -95,8 +95,8 @@ def search_by_blood_pressure():
 def search_by_systolic_pressure():
     temp_list = []
     searching_value = int(input("Podaj wartosc cisnienia skurczowego: "))
-    date, systolic_pressure_list = data_unpack()
-    systolic_pressure = systolic_pressure_list[2]
+    date, blood_pressure_list = data_unpack()
+    systolic_pressure = blood_pressure_list[0]
     n = len(systolic_pressure)
 
     for i in range(n):
@@ -108,8 +108,8 @@ def search_by_systolic_pressure():
 def search_by_diastolic_pressure():
     temp_list = []
     searching_value = int(input("Podaj wartosc cisnienia rozkurczowego: "))
-    date, diastolic_pressure_list = data_unpack()
-    diastolic_pressure = diastolic_pressure_list[2]
+    date, blood_pressure_list = data_unpack()
+    diastolic_pressure = blood_pressure_list[1]
     n = len(diastolic_pressure)
 
     for i in range(n):
