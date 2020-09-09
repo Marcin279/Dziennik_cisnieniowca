@@ -11,14 +11,14 @@
 from add_new_position import *
 from load_save_data import *
 from average_in_month import *
+from searching_mode import *
+from file_mode import *
 
 def interface():
     string = f'1. Dodaj nowa wartość\n' \
-             f'2. Wyszukiwanie po wartości\n' \
-             f'3. Wyszukiwanie po dacie\n' \
-             f'4. Zapis pomiarów do pliku\n' \
-             f'5. Wykres wszystkich pomiarów\n' \
-             f'6. Średnia ciśnienia w wybranym miesiącu\n' \
+             f'2. Wyszukiwanie po dacie i wartości\n' \
+             f'3. Wykres pomiarów\n' \
+             f'4. Średnia ciśnienia w wybranym miesiącu\n' \
              f'0. Koniec\n'
 
     print(string)
@@ -32,24 +32,35 @@ while True:
     interface()
     choice = input("Wybierz opcję z której chcesz skorzystać: ")
     if choice == '1':
+        print("\nFormat daty - dzien.miesiac.rok")
         new=input_data()
         data_base.append(add_data(new[0],new[1],new[2],new[3]))
         new_datas.append(add_data(new[0],new[1],new[2],new[3]))
         print("\n")
     elif choice == '2':
-        print("Not implemented")
-
+        print(f'\n1.Wyszukiwanie po dacie \n' \
+        f'2.Wyszukiwanie po ciśnieniu skurczowym\n' \
+        f'3.Wyszukiwanie po ciśnieniu rozkurczowym\n' \
+        f'4.Wyszukiwanie po pulsie\n')
+        choice=input("Wybierz po czym chcesz wyszukać:")
+        to_print_list=[]
+        data_base_search=load_data()
+        if choice == '1':
+            to_print_list=search_by_date()
+        elif choice == '2':
+            to_print_list=search_by_systolic_pressure()
+        elif choice == '3':
+            to_print_list = search_by_diastolic_pressure()
+        elif choice == '4':
+            to_print_list=search_by_blood_pressure()
+        else:
+            print("Spróbuj ponownie")
+        print("\nZnalezione wartości:")
+        print(to_print_list)
+        print("\n")
     elif choice == '3':
         print("Not implemented")
-
-    elif choice == '4':
-        print("Not implemented")
-        interface()
-
-    elif choice == "5":
-        print("Not implemented")
-
-    elif choice == "6":
+    elif choice == "4":
         month=input("Wybierz miesiąc:")
         year=input("Wybierz rok:")
         average_in_month(data_base,month,year)
