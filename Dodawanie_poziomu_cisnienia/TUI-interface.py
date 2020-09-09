@@ -8,6 +8,7 @@
 4. Wykres pomiarów
 5. Średnia ciśnienia w danym miesiącu
 """
+import searching_mode
 import file_mode
 
 
@@ -20,7 +21,8 @@ def interface():
              f'0. Koniec'
     print("\n")
     print(string)
-    
+
+
 def interface_2():
     string_2 = f'1. Szukaj wartosci pulsu \n' \
                f'2. Szukaj wartosci cisnienia skurczowego \n' \
@@ -28,6 +30,7 @@ def interface_2():
                f'0. Koniec'
     print("\n")
     print(string_2)
+
 
 while True:
     interface()
@@ -38,16 +41,20 @@ while True:
     elif choice == '2':
         while True:
             interface_2()
-            choice_2 = input("Wybierz opcję z której chcesz skorzystac: ")
-            if choice_2 == '1':          
-                print(file_mode.search_by_blood_pressure())
-    
+            choice_2 = input("Wybierz opcję z której chcesz skorzystac:\n"
+                             "1: Puls\n"
+                             "2: Cisnienie skurczowe\n"
+                             "3: Cisnienie rozkurczowe\n "
+                             "0: Wroc do menu glownego")
+            if choice_2 == '1':
+                print(searching_mode.search_by_blood_pressure())
+
             elif choice_2 == '2':
-                print(file_mode.search_by_systolic_pressure())
-    
+                print(searching_mode.search_by_systolic_pressure())
+
             elif choice_2 == '3':
-                print(file_mode.search_by_diastolic_pressure())
-                
+                print(searching_mode.search_by_diastolic_pressure())
+
             elif choice_2 == '0':
                 print("Koniec")
                 break
@@ -57,7 +64,7 @@ while True:
                 continue
 
     elif choice == '3':
-        print(file_mode.search_by_date())
+        print(searching_mode.search_by_date())
 
     elif choice == '4':
         print("Not implemented")

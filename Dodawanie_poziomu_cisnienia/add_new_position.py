@@ -5,7 +5,7 @@
 def input_data():
     # Data - dzien.miesiac.rok
 
-    date_input = input("Podaj date:")
+    date_input = input("Podaj date [dzien.miesiac.rok]:  ")
     systolic_pressure_input = input("Podaj cisnienie skurczowe:")
     diastolic_pressure_input = input("Podaj cisnienie rozkurczowe:")
     blood_pressure_input = input("Podaj puls:")
