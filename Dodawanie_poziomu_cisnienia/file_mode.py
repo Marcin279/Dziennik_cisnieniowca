@@ -60,36 +60,3 @@ def data_unpack():
     value = [systolic_pressure, diastolic_pressure, blood_pressure]
     return date, value  # Zwraca krotke tablic (data: str, wartosc: [int, int, int])
 
-
-def search_by_date():
-    temp_list = []
-    searching_date = input("Podaj date: ")
-    date, blood_pressure_list = data_unpack()
-    systolic_pressure = blood_pressure_list[0]
-    diastolic_pressure = blood_pressure_list[1]
-    blood_pressure = blood_pressure_list[2]
-
-    n = len(date)
-
-    for i in range(n):
-        if searching_date == date[i]:
-            temp_list.append(systolic_pressure[i])
-            temp_list.append(diastolic_pressure[i])
-            temp_list.append(blood_pressure[i])
-    return temp_list if temp_list != [] else "Nie ma takiej daty"
-
-
-def search_by_value():
-    temp_list = []
-    searching_value = int(input("Podaj wartosc pulsu: "))
-    date, blood_pressure_list = data_unpack()
-    blood_pressure = blood_pressure_list[2]
-    n = len(blood_pressure)
-
-    for i in range(n):
-        if searching_value == blood_pressure[i]:
-            temp_list.append(date[i])
-
-    return temp_list if temp_list != [] else "Nie ma takiej wartosci"
-
-

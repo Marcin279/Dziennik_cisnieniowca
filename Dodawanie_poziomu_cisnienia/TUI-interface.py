@@ -9,7 +9,8 @@
 5. Średnia ciśnienia w danym miesiącu
 """
 import file_mode
-
+from searching_mode import search_by_date, search_by_blood_pressure, search_by_diastolic_pressure
+from searching_mode import search_by_systolic_pressure
 
 def interface():
     string = f'1. Dodaj nowa wartosc\n' \
@@ -22,6 +23,15 @@ def interface():
     print(string)
 
 
+def interface2():
+    string = f'1. Szukaj po wartosci pulsu\n' \
+             f'2. Szukaj pow wartosci cisnienia skurczowego\n' \
+             f'3. Szukaj pow wartosci cisnienia rozkurczowego\n' \
+             f'0. Koniec'
+    print("\n")
+    print(string)
+
+
 while True:
     interface()
     choice = input("Wybierz opcję z której chcesz skorzystac: ")
@@ -29,10 +39,24 @@ while True:
         file_mode.write_data()
 
     elif choice == '2':
-        print(file_mode.search_by_value())
+        while True:
+            interface2()
+            choice = input("Wybierz opcję z której chcesz skorzystac: ")
+
+            if choice == '1':
+                print(search_by_blood_pressure())
+            elif choice == '2':
+                print(search_by_systolic_pressure())
+            elif choice == '3':
+                print(search_by_diastolic_pressure())
+            elif choice == '0':
+                print("Koniec")
+                break
+            else:
+                print("Nie ma takiej wartosci spróbuj ponownie")
 
     elif choice == '3':
-        print(file_mode.search_by_date())
+        print(search_by_date())
 
     elif choice == '4':
         print("Not implemented")
