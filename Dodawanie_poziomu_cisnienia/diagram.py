@@ -32,16 +32,28 @@ def plot_diagram(month: int):
     diastolic_pressure = values[1]
     blood_pressure = values[2]
     i = 0
+    sys = []
+    blood = []
+    dias = []
+    dates = []
     for mon in get_month():
         if month == mon:
-            plt.plot(date[i], systolic_pressure[i], 'go')
-            plt.plot(date[i], diastolic_pressure[i], 'ro')
-            plt.plot(date[i], blood_pressure[i], 'bo')
-
+            dates.append(date[i])
+            sys.append(systolic_pressure[i])
+            dias.append(diastolic_pressure[i])
+            blood.append(blood_pressure[i])
+            # plt.plot(date[i], systolic_pressure[i], 'go', label=)
+            # plt.plot(date[i], diastolic_pressure[i], 'ro')
+            # plt.plot(date[i], blood_pressure[i], 'bo')
         i += 1
+
+    plt.plot(dates, sys, 'o', label="Cisnienie skurczowe")
+    plt.plot(dates, dias, 'ro', label="Cisnienie rozkurczowe")
+    plt.plot(dates, blood, 'bo', label="Puls")
     plt.title("Wykres")
     plt.xlabel("Data")
     plt.ylabel("Wartosci cisnienia")
+    plt.legend(loc='best', shadow=True, fontsize=12)
     plt.show()
 
 
