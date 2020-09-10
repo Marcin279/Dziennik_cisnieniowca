@@ -8,7 +8,6 @@
 4. Wykres pomiarów
 5. Średnia ciśnienia w danym miesiącu
 """
-from add_new_position import *
 from load_save_data import *
 from average_in_month import *
 from searching_mode import *
@@ -57,6 +56,7 @@ while True:
             to_print_list = search_by_blood_pressure()
         else:
             print("Spróbuj ponownie")
+            continue
         print("\nZnalezione wartości:")
         print(to_print_list)
         print("\n")
