@@ -10,9 +10,6 @@ date = x[0]
 values = x[1]
 
 
-# # TODO: Do usunięcia, używane do testów
-# selected_month = int(input("Podaj miesiac, z ktorego chcesz miec wyniki: "))
-
 # Funkcja otrzymuje jako parametr miesiąc i rok i rysuje wykres z podanego okresu
 def plot_diagram(dates):
     systolic_pressure = values[0]
@@ -40,4 +37,3 @@ def plot_diagram(dates):
     plt.ylabel("Wartosci cisnienia")
     plt.legend(loc='best', shadow=True, fontsize=12)
     plt.show()
-
