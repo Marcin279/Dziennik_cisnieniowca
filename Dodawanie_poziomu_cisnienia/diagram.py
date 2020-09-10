@@ -41,5 +41,3 @@ def plot_diagram(dates):
     plt.legend(loc='best', shadow=True, fontsize=12)
     plt.show()
 
-
-plot_diagram('09.20')
