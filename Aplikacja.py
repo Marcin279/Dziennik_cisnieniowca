@@ -13,6 +13,7 @@ from average_in_month import *
 from searching_mode import *
 from file_mode import *
 from diagram import *
+from add_new_position import *
 
 
 def interface():
