@@ -11,4 +11,6 @@ W celu poprawnego zapisu danych należy po każdym uruchomieniu zamknąć progra
 
 Aby uniknąć błędów podczas korzystania z funkcjonalności wykresów należy pobrać do swojego interpretera pakiet MatPlotLib.
 
+UWAGA: Wprowadzone nowe pomiary będą dostępne w programie dopiero w trakcie kolejnego uruchomienia
+
 Życzymy miłego korzystania z aplikacji.
